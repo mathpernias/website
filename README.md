@@ -39,7 +39,7 @@ Modify `styles.css` to change:
 
 - HTML5
 - CSS3
-- Pure JavaScript (no dependencies)
+- No dependencies required
 
 ## License
 
