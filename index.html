@@ -3,11 +3,69 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio - Math Pernias</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Portfolio - Mathis Pernias</title>
+    <style>
+        :root {
+            --primary: #2563eb;
+            --dark: #0f172a;
+            --light: #f8fafc;
+            --gray-bg: #f1f5f9;
+            --text-gray: #64748b;
+        }
+        body { margin: 0; font-family: 'Segoe UI', sans-serif; color: #333; line-height: 1.6; }
+        .container { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
+        
+        /* Nav */
+        .navbar { background: #fff; box-shadow: 0 2px 10px rgba(0,0,0,0.1); padding: 1rem 0; position: sticky; top: 0; z-index: 100; }
+        .navbar .container { display: flex; justify-content: space-between; align-items: center; }
+        .logo { font-size: 1.5rem; font-weight: bold; color: var(--primary); }
+        .nav-menu { list-style: none; display: flex; gap: 20px; }
+        .nav-menu a { text-decoration: none; color: #333; font-weight: 500; }
+        .nav-menu a:hover { color: var(--primary); }
+
+        /* Hero */
+        .hero { background: var(--dark); color: white; padding: 100px 0; text-align: center; }
+        .hero-title { font-size: 3.5rem; margin-bottom: 10px; }
+        .hero-subtitle { font-size: 1.5rem; color: #cbd5e1; margin-bottom: 30px; }
+        .btn { display: inline-block; padding: 12px 30px; border-radius: 5px; text-decoration: none; font-weight: bold; transition: 0.3s; }
+        .btn-primary { background: var(--primary); color: white; }
+        .btn-primary:hover { background: #1d4ed8; }
+        .btn-secondary { background: #e2e8f0; color: #333; }
+
+        /* Sections */
+        .section { padding: 80px 0; }
+        .section-gray { background: var(--gray-bg); }
+        .section-title { text-align: center; font-size: 2.5rem; margin-bottom: 50px; color: var(--dark); }
+
+        /* Projects */
+        .projects-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
+        .project-card { background: white; padding: 30px; border-radius: 10px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); transition: transform 0.3s ease, opacity 0.3s ease; }
+        .projects-grid:hover .project-card { opacity: 0.6; transform: scale(0.95); }
+        .projects-grid:hover .project-card:hover { opacity: 1; transform: scale(1.05); z-index: 10; }
+        .project-video { width: 100%; height: auto; margin: 15px 0; border-radius: 8px; background: #000; cursor: pointer; transition: transform 0.3s ease; }
+        .project-video:hover { transform: scale(2); }
+        .project-tags { margin-top: 20px; display: flex; flex-wrap: wrap; gap: 10px; }
+        .tag { background: #e0f2fe; color: #0284c7; padding: 5px 12px; border-radius: 15px; font-size: 0.85rem; font-weight: 600; }
+
+        /* Timeline */
+        .timeline { position: relative; max-width: 800px; margin: 0 auto; }
+        .timeline::after { content: ''; position: absolute; width: 2px; background: #e2e8f0; top: 0; bottom: 0; left: 20px; margin-left: -1px; }
+        .timeline-item { padding: 10px 40px; position: relative; margin-bottom: 40px; }
+        .timeline-dot { width: 20px; height: 20px; background: var(--primary); border-radius: 50%; position: absolute; left: 11px; top: 15px; z-index: 10; border: 4px solid white; box-shadow: 0 0 0 2px #e2e8f0; }
+        .timeline-content { background: white; padding: 25px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.05); border-left: 4px solid var(--primary); }
+        .timeline-date { color: var(--primary); font-weight: bold; font-size: 0.9rem; margin-bottom: 10px; display: block; }
+        .timeline-title { margin-bottom: 5px; font-size: 1.25rem; }
+        .timeline-company { font-weight: 600; color: var(--text-gray); margin-bottom: 15px; }
+        .timeline-achievements { padding-left: 20px; margin-top: 15px; color: #475569; }
+        .timeline-achievements li { margin-bottom: 8px; }
+
+        /* Contact */
+        .contact-content { text-align: center; }
+        .contact-links { margin-top: 30px; display: flex; justify-content: center; gap: 20px; }
+        footer { background: var(--dark); color: #94a3b8; text-align: center; padding: 30px 0; }
+    </style>
 </head>
 <body>
-    <!-- Navigation -->
     <nav class="navbar">
         <div class="container">
             <h1 class="logo">MP</h1>
@@ -21,87 +79,92 @@
         </div>
     </nav>
 
-    <!-- Hero Section -->
     <section id="home" class="hero">
         <div class="container">
-            <h1 class="hero-title">Math Pernias</h1>
-            <p class="hero-subtitle">Software Developer & Creative Problem Solver</p>
+            <h1 class="hero-title">Mathis Pernias</h1>
+            <p class="hero-subtitle">Data Engineering & AI Student | Machine Learning Intern</p>
             <a href="#projects" class="btn btn-primary">View My Work</a>
         </div>
     </section>
 
-    <!-- About Section -->
     <section id="about" class="section">
         <div class="container">
             <h2 class="section-title">About Me</h2>
-            <div class="about-content">
+            <div class="about-content" style="max-width: 800px; margin: 0 auto; text-align: center;">
                 <p>
-                    I'm a passionate software developer with expertise in building modern web applications.
-                    I love turning complex problems into simple, beautiful, and intuitive solutions.
+                    I am a Master's-level engineering student in a double degree program at <strong>Polytechnique Montréal</strong> and <strong>Télécom Physique Strasbourg</strong>.
+                    I specialize in Data Engineering, Analytics, and Artificial Intelligence.
                 </p>
+                <br>
                 <p>
-                    With a strong foundation in various technologies and frameworks, I continuously
-                    strive to learn and adapt to new challenges in the ever-evolving tech landscape.
+                    With hands-on experience at companies like <strong>McKesson</strong> and <strong>Maersk</strong>, I love building robust data pipelines and GenAI solutions.
+                    I am comfortable working with confidential data, automating CI/CD workflows, and solving complex problems in bilingual environments (English/French).
                 </p>
             </div>
         </div>
     </section>
 
-    <!-- Projects Section -->
     <section id="projects" class="section section-gray">
         <div class="container">
-            <h2 class="section-title">Projects</h2>
+            <h2 class="section-title">Key Projects</h2>
             <div class="projects-grid">
                 <div class="project-card">
-                    <h3>Project One</h3>
-                    <p>A brief description of your first project and what technologies were used.</p>
-                    <div class="project-tags">
-                        <span class="tag">JavaScript</span>
-                        <span class="tag">React</span>
-                        <span class="tag">Node.js</span>
-                    </div>
-                </div>
-                <div class="project-card">
-                    <h3>Project Two</h3>
-                    <p>A brief description of your second project and what technologies were used.</p>
+                    <h3>RAG-based Chatbot (McKesson)</h3>
+                    <p>Developed an internal chatbot using RAMQ drug data to support decision-making and improve information access for business teams.</p>
                     <div class="project-tags">
                         <span class="tag">Python</span>
-                        <span class="tag">Django</span>
-                        <span class="tag">PostgreSQL</span>
+                        <span class="tag">Snowflake AI</span>
+                        <span class="tag">Azure Lambda</span>
+                        <span class="tag">RAG</span>
                     </div>
                 </div>
                 <div class="project-card">
-                    <h3>Project Three</h3>
-                    <p>A brief description of your third project and what technologies were used.</p>
+                    <h3>Open Source: datacontract-cli</h3>
+                    <p>Contributed to the GitHub project <code>datacontract-cli</code> to improve data governance, documentation, and pipeline reliability.</p>
+                    <video class="project-video" autoplay muted loop>
+                        <source src="mermaid_demo.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                    <a href="https://github.com/datacontract/datacontract-cli" target="_blank" class="btn btn-secondary" style="margin-top: 15px; display: inline-block;">View on GitHub</a>
                     <div class="project-tags">
-                        <span class="tag">TypeScript</span>
-                        <span class="tag">Vue.js</span>
-                        <span class="tag">Firebase</span>
+                        <span class="tag">Open Source</span>
+                        <span class="tag">Data Quality</span>
+                        <span class="tag">Git</span>
+                        <span class="tag">Governance</span>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <h3>Time-Series Generation with GANs</h3>
+                    <p>Trained a Generative Adversarial Network (GAN) to create synthetic time series data and analyzed output quality and stability.</p>
+                    <div class="project-tags">
+                        <span class="tag">PyTorch</span>
+                        <span class="tag">Deep Learning</span>
+                        <span class="tag">Python</span>
+                        <span class="tag">Research</span>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Experience Timeline Section -->
     <section id="experience" class="section">
         <div class="container">
-            <h2 class="section-title">Expérience</h2>
+            <h2 class="section-title">Experience</h2>
             <div class="timeline">
+                
                 <div class="timeline-item">
                     <div class="timeline-dot"></div>
                     <div class="timeline-content">
-                        <h3 class="timeline-title">Senior Software Developer</h3>
-                        <p class="timeline-company">Tech Company Inc.</p>
-                        <p class="timeline-date">2022 - Present</p>
+                        <h3 class="timeline-title">Data Engineering & AI Intern</h3>
+                        <p class="timeline-company">McKesson (DataHub Team) - Montréal</p>
+                        <p class="timeline-date">May 2025 - Aug 2025</p>
                         <p class="timeline-description">
-                            Leading development of key features and mentoring junior developers.
-                            Architecting scalable solutions for high-traffic applications.
+                            Built and validated data pipelines supporting analytics and AI use cases.
                         </p>
                         <ul class="timeline-achievements">
-                            <li>Improved application performance by 40%</li>
-                            <li>Led team of 5 developers</li>
-                            <li>Implemented CI/CD pipeline</li>
+                            <li>Developed a RAG-based chatbot using RAMQ drug data.</li>
+                            <li>Automated tests and integrated them into Git/CI workflows.</li>
+                            <li>Built Power BI dashboards for KPI tracking and monitored error rates.</li>
                         </ul>
                     </div>
                 </div>
@@ -109,17 +172,15 @@
                 <div class="timeline-item">
                     <div class="timeline-dot"></div>
                     <div class="timeline-content">
-                        <h3 class="timeline-title">Software Developer</h3>
-                        <p class="timeline-company">Digital Solutions Ltd.</p>
-                        <p class="timeline-date">2020 - 2022</p>
+                        <h3 class="timeline-title">Research Intern (Data Science)</h3>
+                        <p class="timeline-company">Maersk Mc-Kinney Moller Institute - Denmark</p>
+                        <p class="timeline-date">May 2024 - Aug 2024</p>
                         <p class="timeline-description">
-                            Developed and maintained full-stack web applications using modern frameworks.
-                            Collaborated with cross-functional teams to deliver quality products.
+                            Conducted analytical studies and built predictive models on simulation-based datasets (SIR).
                         </p>
                         <ul class="timeline-achievements">
-                            <li>Built 10+ client applications</li>
-                            <li>Reduced bug rate by 30%</li>
-                            <li>Introduced automated testing</li>
+                            <li>Developed supervised models using Decision Trees (Python, Julia).</li>
+                            <li>Communicated findings through structured summaries and project reviews.</li>
                         </ul>
                     </div>
                 </div>
@@ -127,60 +188,64 @@
                 <div class="timeline-item">
                     <div class="timeline-dot"></div>
                     <div class="timeline-content">
-                        <h3 class="timeline-title">Junior Developer</h3>
-                        <p class="timeline-company">StartUp Innovations</p>
-                        <p class="timeline-date">2018 - 2020</p>
+                        <h3 class="timeline-title">Systems Engineering Intern</h3>
+                        <p class="timeline-company">INRIA (CAMUS Team) - Strasbourg</p>
+                        <p class="timeline-date">June 2023</p>
                         <p class="timeline-description">
-                            Started career developing web applications and learning best practices.
-                            Contributed to various projects and gained experience in agile methodologies.
+                            Implemented automated load-balancing computation for multi-threaded workloads.
                         </p>
                         <ul class="timeline-achievements">
-                            <li>Developed responsive UI components</li>
-                            <li>Participated in code reviews</li>
-                            <li>Learned multiple programming languages</li>
+                            <li>Performance diagnostics on multi-core architectures.</li>
+                            <li>Technologies used: C, Bash, Python.</li>
                         </ul>
+                    </div>
+                </div>
+
+                 <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <h3 class="timeline-title">Master's in Computer Engineering</h3>
+                        <p class="timeline-company">Polytechnique Montréal</p>
+                        <p class="timeline-date">2024 - 2026</p>
+                        <p class="timeline-description">
+                            Major in Data Engineering & Analytics.
+                        </p>
                     </div>
                 </div>
 
                 <div class="timeline-item">
                     <div class="timeline-dot"></div>
                     <div class="timeline-content">
-                        <h3 class="timeline-title">Education</h3>
-                        <p class="timeline-company">University of Technology</p>
-                        <p class="timeline-date">2014 - 2018</p>
+                        <h3 class="timeline-title">Engineering Degree</h3>
+                        <p class="timeline-company">Télécom Physique Strasbourg</p>
+                        <p class="timeline-date">2022 - 2025</p>
                         <p class="timeline-description">
-                            Bachelor's Degree in Computer Science
+                           Computer Science & Networks.
                         </p>
-                        <ul class="timeline-achievements">
-                            <li>Graduated with honors</li>
-                            <li>Specialized in software engineering</li>
-                            <li>Completed capstone project</li>
-                        </ul>
                     </div>
                 </div>
+
             </div>
         </div>
     </section>
 
-    <!-- Contact Section -->
     <section id="contact" class="section section-gray">
         <div class="container">
             <h2 class="section-title">Get In Touch</h2>
             <div class="contact-content">
-                <p>I'm always interested in hearing about new projects and opportunities.</p>
+                <p>I'm always interested in hearing about new projects and opportunities in Data Engineering and AI.</p>
                 <div class="contact-links">
-                    <a href="mailto:contact@example.com" class="btn btn-primary">Email Me</a>
-                    <a href="https://github.com/mathpernias" class="btn btn-secondary">GitHub</a>
-                    <a href="https://linkedin.com" class="btn btn-secondary">LinkedIn</a>
+                    <a href="mailto:mathis.pernias@gmail.com" class="btn btn-primary">Email Me</a>
+                    <a href="https://github.com/mathpernias" target="_blank" class="btn btn-secondary">GitHub</a>
+                    <a href="https://www.linkedin.com/in/mathis-pernias-74a640199/" target="_blank" class="btn btn-secondary">LinkedIn</a>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Footer -->
     <footer class="footer">
         <div class="container">
-            <p>&copy; 2026 Math Pernias. All rights reserved.</p>
+            <p>&copy; 2026 Mathis Pernias. All rights reserved.</p>
         </div>
     </footer>
 </body>
